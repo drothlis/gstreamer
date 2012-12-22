@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $(dirname "$0")/../../tools/gstreamer-completion
+. $(dirname "$0")/../../tools/gstreamer-completion-0.10
 ret=0
 
 
@@ -14,7 +14,7 @@ test_gst_inspect_completion() {
     expected=(); while [[ -n "$1" ]]; do expected+=("$1"); shift; done
 
     printf "test_gst_inspect_completion: '${COMP_WORDS[*]}'... "
-    _gst_inspect
+    _gst_inspect_0_10
 
     _assert_expected && echo OK
 }
@@ -57,7 +57,7 @@ test_gst_launch_completion() {
     expected=(); while [[ -n "$1" ]]; do expected+=("$1"); shift; done
 
     printf "test_gst_launch_completion: '${COMP_WORDS[*]}'... "
-    _gst_launch
+    _gst_launch_0_10
 
     _assert_expected &&
     echo OK
